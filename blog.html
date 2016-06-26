@@ -1,0 +1,77 @@
+<html>
+<head>
+<title>
+BLOGspot
+</title>
+
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	   <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+	    <link rel="stylesheet" href="blog.css" type="text/css">
+	          <script type = "text/javascript" 
+         src = "http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		
+      <script type = "text/javascript" 
+         src = "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+	   <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+     <link href='https://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+</head>   
+<body>
+
+<div class="container-fluid">
+<div class="transperant">
+<h1 id="myText"></h1>
+<ul class="list-inline" id="pure">
+<li><button type="button">Signin</button></li>
+<li><button type="button" >Signup</button></li>
+</ul>
+<div id="h">
+
+<button type="button" id="em">Contact</button>
+<div id="chagol">
+<ul class="list-inline">
+	<li id="icon"><a href=""><i class="fa fa-facebook-square fa-3x"></i></a></li>
+	<li id="icon"><a href=""><i class="fa fa-twitter-square fa-3x"></i></a></li>
+	<li id="icon"><a href=""><i class="fa fa-linkedin-square fa-3x"></i></a></li>
+	</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+<script type="text/javascript">
+$(document).ready(function(){
+
+	var text="Explore The World";
+var delay=300;
+var elem = $("#myText");
+//text- string
+//elem - jQuery element where text is to be attached
+//delay - the delay in each text
+var addTextByDelay = function(text,elem,delay){
+   
+    if(text.length >0){
+        //append first character 
+        elem.append(text[0]);
+        setTimeout(
+            function(){
+                //Slice text by 1 character and call function again                
+                addTextByDelay(text.slice(1),elem,delay);            
+             },delay                 
+            );
+    }
+}
+
+addTextByDelay(text,elem,delay);
+$("#chagol").hide();
+});
+$('#em').click(function(){
+	$('#chagol').show("clip",{direction: "vertical"},1000);
+	
+});
+</script>
+</html>
